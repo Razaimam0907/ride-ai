@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chalo Rides – Chalo, let's go!</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="nav"><a class="logo" href="#">🛺 chalo<b>rides</b></a>
+<nav id="menu"><a href="#book">Ride</a><a href="#later">Plan ahead</a><a href="#group">Group</a><a href="#biz">Business</a><a href="#faq">FAQ</a></nav>
+<div class="actions"><button class="ghost" id="loginBtn">Log in</button><button class="solid" id="signBtn">Sign up</button><button class="burger" id="burger">☰</button></div></header>
+
+<section class="hero" id="book"><div class="wrap">
+<div class="hero-text"><p class="tag">🌅 Chalo, ready to go?</p><h1>Where do you want to <span>chalo</span> today?</h1>
+<p class="sub">Tap, hop in, relax. Pick your ride and we'll get you there.</p>
+<div class="card"><div class="field"><i class="d a"></i><input id="from" placeholder="Pickup location" list="places"></div>
+<div class="field"><i class="d b"></i><input id="to" placeholder="Where to?" list="places"></div>
+<datalist id="places"><option>Airport</option><option>Central Station</option><option>City Mall</option><option>Beach Road</option><option>Tech Park</option><option>Old Town</option><option>University</option></datalist>
+<div class="row"><input type="date" id="date"><input type="time" id="time"></div>
+<button class="solid big" id="seePrices">See prices</button><p class="hint" id="hint"></p></div></div>
+<div class="hero-art"><div class="sun"></div><div class="plane" id="plane">🛺</div><div class="cloud c1"></div><div class="cloud c2"></div></div>
+</div></section>
+
+<section id="rides" class="wrap hidden"><h2>Choose your ride</h2><p class="muted" id="routeInfo"></p><div id="rideList" class="rides"></div></section>
+
+<section class="wrap" id="later"><div class="split"><div><h2>Plan for later 🗓</h2><p class="muted">Lock in a pickup up to 30 days ahead. Rides start when you say.</p>
+<ul class="ticks"><li>Choose your exact pickup time</li><li>Extra wait time included</li><li>Cancel free up to 60 minutes before</li></ul>
+<button class="solid" onclick="document.getElementById('date').focus();window.lenis?lenis.scrollTo(0):scrollTo({top:0,behavior:'smooth'})">Schedule a ride</button></div>
+<div class="panel"><b>Next ride</b><p id="nextFlight" class="muted">No rides booked yet. Chalo, where to next?</p></div></div></section>
+
+<section class="wrap dark" id="group"><div class="split"><div><h2>Chalo together 👯</h2><p>Add friends, split the fare automatically, and everyone gets their own pickup spot.</p>
+<div class="split-calc"><label>Friends <input type="number" id="ppl" min="1" max="6" value="3"></label><label>Fare ₹ <input type="number" id="fare" value="600"></label><p>Each pays <b id="each">₹200</b></p></div></div>
+<div class="panel"><b>Group order</b><div class="chips"><span>You</span><span>Aarav</span><span>Meera</span></div></div></div></section>
+
+<section class="wrap" id="biz"><h2>Chalo for business 💼</h2><div class="grid3">
+<div class="tile">🧳<b>Business travel</b><p>Rides for teams, one monthly invoice.</p></div><div class="tile">🍱<b>Meal programs</b><p>Late nights covered, guilt-free.</p></div><div class="tile">🎟<b>Guest rides</b><p>Book a seat for clients and visitors.</p></div></div></section>
+
+<section class="wrap" id="faq"><h2>Questions? We've got answers</h2>
+<details><summary>How do I book a ride?</summary><p>Enter pickup and destination, hit See prices, pick a ride and confirm.</p></details>
+<details><summary>Can I cancel?</summary><p>Yes, free until 60 minutes before a scheduled ride, and within 2 minutes of a live booking.</p></details>
+<details><summary>How is the fare calculated?</summary><p>Base fare + distance + time, with a small surge when many people ride at once.</p></details>
+<details><summary>Is it safe?</summary><p>Share your trip live with a friend and use the in-app SOS anytime.</p></details></section>
+
+<footer><div class="wrap"><a class="logo" href="#">🛺 chalo<b>rides</b></a><p>Ready when you are. © 2026 Chalo Rides. A fun learning project, not affiliated with any real company.</p></div></footer>
+
+<div class="modal" id="modal"><div class="box"><button class="x" id="closeM">✕</button><div id="mBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+<button id="aiBtn" title="Ask Chalo AI">🤖</button>
+<div id="aiBox"><div class="ai-h"><b>Chalo AI</b><span>Your trip buddy</span><button id="aiX">✕</button></div>
+<div id="aiMsgs"></div><div class="ai-f"><input id="aiIn" placeholder="e.g. Book a Cruise to Airport at 6am"><button id="aiSend">➤</button></div></div>
+<script src="ai.js"></script>
+<script src="fx.js"></script>
+</body></html>
